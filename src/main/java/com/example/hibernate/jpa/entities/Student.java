@@ -17,6 +17,9 @@ public class Student {
 	
 	private String name;
 	
+	private double moneyInHand;
+	
+	
 	@OneToOne(fetch = FetchType.LAZY)
 	private Passport passport;
 	
@@ -40,6 +43,12 @@ public class Student {
 	}
 	
 
+	public Student(String name, double moneyInHand) {
+		super();
+		this.name = name;
+		this.moneyInHand = moneyInHand;
+	}
+
 	public Passport getPassport() {
 		return passport;
 	}
@@ -48,13 +57,22 @@ public class Student {
 		this.passport = passport;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + "]";
+		return "Student [id=" + id + ", name=" + name + ", moneyInHand=" + moneyInHand + "]";
 	}
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public double getMoneyInHand() {
+		return moneyInHand;
+	}
+
+	public void setMoneyInHand(double moneyInHand) {
+		this.moneyInHand = moneyInHand;
 	}
 
 	

@@ -16,7 +16,9 @@ import com.example.hibernate.jpa.inheritancemapping.repo.EmployeeRepository;
 import com.example.hibernate.jpa.repository.CourseBasicRepository;
 import com.example.hibernate.jpa.repository.PassportRepository;
 import com.example.hibernate.jpa.repository.ReviewRepository;
+import com.example.hibernate.jpa.repository.StudentDataJpaRepository;
 import com.example.hibernate.jpa.repository.StudentRepository;
+import com.example.hibernate.jpa.service.StudentService;
 
 @SpringBootApplication
 public class JpaApplication implements CommandLineRunner {
@@ -35,6 +37,10 @@ public class JpaApplication implements CommandLineRunner {
 	
 	@Autowired
 	EmployeeRepository employeeRepository;
+	
+	
+	@Autowired
+	StudentService service;
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -50,7 +56,9 @@ public class JpaApplication implements CommandLineRunner {
 		boolean jpaWithManyToOneMappingFlag = false;
 		boolean jpaWithOneToManyMappingFlag = false;
 		boolean jpaWithManyToManyMappingFlag = false;
-		boolean inheritanceMappingFlag=true;
+		boolean inheritanceMappingFlag=false;
+		
+		boolean dataJpaFlag = true;
 
 		if (jpaWithManyToManyMappingFlag) {
 			jpaWithManyToManyMapping();
@@ -75,6 +83,15 @@ public class JpaApplication implements CommandLineRunner {
 			inheritanceMappings();
 			
 		}
+		if (dataJpaFlag) {
+			dataJpa();	
+		}
+	}
+
+	private void dataJpa() {
+//	s
+		service.triggerStudentJPAMethods();
+		
 	}
 
 	private void inheritanceMappings() {

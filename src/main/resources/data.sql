@@ -10,12 +10,14 @@ insert into passport (id,passport_number)values (3002,'P12346');
 insert into passport (id,passport_number)values (3003,'P12347');
 insert into passport (id,passport_number)values (3004,'P12348');
 insert into passport (id,passport_number)values (3005,'P12349');
+insert into passport (id,passport_number)values (3006,'P12350');
 
-insert into student(name,id,passport_id) values('Adam',2001,3001);
-insert into student(name,id,passport_id) values('James',2002,3002);
-insert into student(name,id,passport_id) values('Jack',2003,3003);
-insert into student(name,id,passport_id) values('Jill',2004,3004);
-insert into student(name,id,passport_id) values('Eve',2005,3005);
+insert into student(name,id,passport_id,money_in_hand) values('Jason',2001,3001,599.99);
+insert into student(name,id,passport_id, money_in_hand) values('Jane',2002,3002,30487.98);
+insert into student(name,id,passport_id, money_in_hand) values('Jack',2003,3003,34.56);
+insert into student(name,id,passport_id, money_in_hand) values('Jill',2004,3004,23435.76);
+insert into student(name,id,passport_id, money_in_hand) values('Jacquelline',2005,3005,23454.3456);
+insert into student(name,id,passport_id, money_in_hand) values('Jack',2006,3006,111.34);
 
 
 
